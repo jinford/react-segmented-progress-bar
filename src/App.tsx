@@ -1,34 +1,123 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { SegmentedProgressBar } from "./components/shared/segmented-progress-bar";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="w-full h-screen flex items-center justify-center p-8">
+      <div className="space-y-8 w-full max-w-36">
+        <div>
+          <SegmentedProgressBar
+            segments={[
+              {
+                label: "配信成功",
+                value: 50,
+                color: "bg-green-500",
+              },
+              {
+                label: "配信失敗",
+                value: 10,
+                color: "bg-red-500",
+              },
+              {
+                label: "配信対象外",
+                value: 1,
+                color: "bg-amber-500",
+              },
+              {
+                label: "配信結果待ち",
+                value: 5,
+                color: "bg-gray-400",
+              },
+            ]}
+            unit="件"
+            className="w-full"
+          />
+        </div>
+        <div>
+          <SegmentedProgressBar
+            segments={[
+              {
+                label: "配信成功",
+                value: 2,
+                color: "bg-green-500",
+              },
+              {
+                label: "配信失敗",
+                value: 0,
+                color: "bg-red-500",
+              },
+              {
+                label: "配信対象外",
+                value: 0,
+                color: "bg-amber-500",
+              },
+              {
+                label: "配信結果待ち",
+                value: 0,
+                color: "bg-gray-400",
+              },
+            ]}
+            unit="件"
+            className="w-full"
+          />
+        </div>
+        <div>
+          <SegmentedProgressBar
+            segments={[
+              {
+                label: "配信成功",
+                value: 1,
+                color: "bg-green-500",
+              },
+              {
+                label: "配信失敗",
+                value: 1,
+                color: "bg-red-500",
+              },
+              {
+                label: "配信対象外",
+                value: 1,
+                color: "bg-amber-500",
+              },
+              {
+                label: "配信結果待ち",
+                value: 0,
+                color: "bg-gray-400",
+              },
+            ]}
+            unit="件"
+            className="w-full"
+          />
+        </div>
+        <div>
+          <SegmentedProgressBar
+            segments={[
+              {
+                label: "配信成功",
+                value: 0,
+                color: "bg-green-500",
+              },
+              {
+                label: "配信失敗",
+                value: 0,
+                color: "bg-red-500",
+              },
+              {
+                label: "配信対象外",
+                value: 0,
+                color: "bg-amber-500",
+              },
+              {
+                label: "配信結果待ち",
+                value: 1,
+                color: "bg-gray-400",
+              },
+            ]}
+            unit="件"
+            className="w-full"
+          />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }
 
